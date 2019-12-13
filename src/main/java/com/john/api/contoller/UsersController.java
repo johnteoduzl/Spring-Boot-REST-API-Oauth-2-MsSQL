@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.john.api.model.User;
+import com.john.api.model.UserInf;
 import com.john.api.service.UserService;
 
 /***
@@ -26,13 +26,13 @@ public class UsersController {
 	private UserService userService;
 	
 	@GetMapping("/user")
-	public List<User> viewAllUsers()
+	public List<UserInf> viewAllUsers()
 	{
 		return userService.getUsers();
 	}
 	
 	@PostMapping("/user")
-	public User addUser(@RequestBody User newUser)
+	public UserInf addUser(@RequestBody UserInf newUser)
 	{
 		return userService.addUser(newUser);
 		
